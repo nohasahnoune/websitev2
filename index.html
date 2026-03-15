@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noha Sahnoune</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <!-- SEO -->
+<meta name="description" content="Noha Sahnoune — Strategic operator at the intersection of the quantitative and creative. Chief of Staff and Senior Strategic PM at Thomson Reuters." />
+<meta name="keywords" content="Noha Sahnoune, strategy, chief of staff, creative, pilates, Chicago Booth, product marketing, MBA, University of Chicago" />
+<meta name="author" content="Noha Sahnoune" />
+<link rel="canonical" href="https://nohasahnoune.com" />
+
+<!-- Open Graph (controls how your site looks when shared on LinkedIn, iMessage, etc.) -->
+<meta property="og:title" content="Noha Sahnoune" />
+<meta property="og:description" content="Strategic operator at the intersection of the quantitative and creative." />
+<meta property="og:url" content="https://nohasahnoune.com" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter/X card -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Noha Sahnoune" />
+<meta name="twitter:description" content="Strategic operator at the intersection of the quantitative and creative." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sand:        #f5f0e8;
+      --sand-dark:   #ede8df;
+      --ink:         #1a1814;
+      --ink-light:   #4a4540;
+      --ink-muted:   #7a756c;
+      --accent:      #8b6f47;
+      --accent-warm: #c4a882;
+      --rule:        rgba(26,24,20,0.1);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--sand);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* grain */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.5;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 4rem;
+      background: rgba(245,240,232,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.15rem;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .logo em { font-style: italic; color: var(--accent-warm); }
+
+    nav { display: flex; gap: 2.5rem; align-items: center; }
+
+    nav a {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.2s;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 1px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover, nav a.active { color: var(--ink); }
+    nav a:hover::after, nav a.active::after { width: 100%; }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 4rem 4rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    section.visible { opacity: 1; transform: translateY(0); }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 3rem;
+    }
+
+    .section-title em { font-style: italic; color: var(--accent-warm); }
+
+    hr.rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin-bottom: 3rem;
+    }
+
+    /* ── ABOUT / HERO ── */
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+      padding-top: 10rem;
+    }
+
+    .hero-text .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-text h1 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.02;
+      margin-bottom: 2rem;
+      color: var(--ink);
+    }
+
+    .hero-text h1 em {
+      font-style: italic;
+      color: var(--accent-warm);
+    }
+
+    .hero-text .bio {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      line-height: 1.8;
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Photo frame */
+    .hero-image { position: relative; }
+
+    .photo-frame {
+    .photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #c9bfa8 0%, #b5a98f 40%, #9e8f73 100%);
+}
+
+.photo-frame::after {
+  content: 'N·S';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 3rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.3em;
+}
+      
+      
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: #d4c9b5;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-caption {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-top: 0.75rem;
+      text-align: right;
+      font-style: italic;
+      font-family: var(--serif);
+    }
+
+    .corner-deco { position: absolute; width: 32px; height: 32px; }
+    .corner-deco.tl { top: -8px; left: -8px; border-top: 1px solid var(--accent-warm); border-left: 1px solid var(--accent-warm); }
+    .corner-deco.br { bottom: -8px; right: -8px; border-bottom: 1px solid var(--accent-warm); border-right: 1px solid var(--accent-warm); }
+
+    /* Stats */
+    .stats { display: flex; gap: 2.5rem; margin-top: 1rem; }
+    .stat { border-left: 1px solid var(--accent-warm); padding-left: 1rem; }
+    .stat-number { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--ink); line-height: 1; }
+    .stat-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); margin-top: 0.2rem; }
+
+    /* ── PROJECTS ── */
+    #projects { padding-top: 6rem; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+
+    .project-card {
+      background: var(--sand);
+      padding: 2.5rem;
+      transition: background 0.25s;
+    }
+
+    .project-card:hover { background: var(--sand-dark); }
+
+    .project-number {
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--accent-warm);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .project-title {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .project-desc {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent-warm);
+      padding: 0.25rem 0.6rem;
+      margin-right: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    /* ── SKILLS ── */
+    #skills { padding-top: 6rem; }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+    }
+
+    .skills-intro {
+      font-size: 0.92rem;
+      color: var(--ink-muted);
+      line-height: 1.8;
+    }
+
+    .skills-clusters { display: flex; flex-direction: column; gap: 2.5rem; }
+
+    .cluster-title {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .skill-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+    .pill {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--ink-light);
+      background: transparent;
+      border: 1px solid rgba(26,24,20,0.18);
+      padding: 0.45rem 1rem;
+      cursor: default;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .pill:hover { background: var(--sand-dark); border-color: var(--accent-warm); color: var(--accent); }
+
+    .pill.featured { background: var(--ink); border-color: var(--ink); color: var(--sand); }
+    .pill.featured:hover { background: var(--accent); border-color: var(--accent); color: var(--sand); }
+
+    /* ── CONNECT ── */
+    #connect { padding-top: 6rem; }
+
+    .connect-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .connect-copy {
+      font-size: 0.92rem;
+      color: var(--ink-muted);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-links { display: flex; flex-direction: column; }
+
+    .contact-link {
+      display: flex;
+      flex-direction: column;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      color: var(--ink);
+      transition: color 0.2s;
+    }
+
+    .contact-link:hover { color: var(--accent); }
+
+    .cl-label { font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-warm); margin-bottom: 0.2rem; }
+    .cl-value { font-size: 0.88rem; }
+
+    /* Form */
+    .form-field { margin-bottom: 1.5rem; }
+
+    .form-field label {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--rule);
+      padding: 0.5rem 0;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus { border-color: var(--accent); }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: var(--ink-muted); }
+
+    .btn {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sand);
+      background: var(--ink);
+      border: none;
+      padding: 0.9rem 2.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn:hover { background: var(--accent); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      letter-spacing: 0.08em;
+    }
+
+    footer span { font-family: var(--serif); font-style: italic; }
+
+    /* ── TRAVEL ── */
+    #travel { padding-top: 6rem; }
+
+    .travel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .postcard {
+      position: relative;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      cursor: default;
+    }
+
+    /* Photo placeholder — replace background-color with your image */
+    .postcard-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    /* Placeholder shown when no real image is supplied */
+    .postcard-placeholder {
+      width: 100%;
+      height: 100%;
+      background: var(--placeholder-color, #b5a98f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.5s ease;
+    }
+
+    .postcard-placeholder-label {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.1em;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .postcard:hover .postcard-img,
+    .postcard:hover .postcard-placeholder { transform: scale(1.05); }
+
+    /* Overlay gradient + text */
+    .postcard-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(20,17,12,0.72) 0%, rgba(20,17,12,0.1) 55%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.4rem 1.5rem;
+      pointer-events: none;
+    }
+
+    .postcard-region {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-warm);
+      margin-bottom: 0.25rem;
+    }
+
+    .postcard-city {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.3rem;
+      color: #fff;
+      line-height: 1.15;
+    }
+
+    /* Decorative stamp corner */
+    .postcard::after {
+      content: '';
+      position: absolute;
+      top: 0.75rem; right: 0.75rem;
+      width: 22px; height: 22px;
+      border: 1px solid rgba(255,255,255,0.3);
+      pointer-events: none;
+    }
+
+    /* ── RESPONSIVE ── */
+   /* ── HAMBURGER ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--ink);
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 57px; left: 0; right: 0;
+  background: rgba(245,240,232,0.98);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+  padding: 1.5rem 2rem;
+  flex-direction: column;
+  gap: 0;
+  z-index: 99;
+}
+
+.mobile-menu.open { display: flex; }
+
+.mobile-menu a {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  text-decoration: none;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--rule);
+  transition: color 0.2s;
+}
+
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover, .mobile-menu a.active { color: var(--ink); }
+    
+    
+    @media (max-width: 900px) {
+      nav { display: none; }
+.hamburger { display: flex; }
+      header { padding: 1.2rem 2rem; }
+      section { padding: 3rem 2rem 2rem; }
+      #about { grid-template-columns: 1fr; gap: 3rem; padding-top: 8rem; }
+      .hero-image { display: none; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .travel-grid { grid-template-columns: 1fr; }
+      .skills-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .connect-layout { grid-template-columns: 1fr; gap: 3rem; }
+      footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="#about">Noha Sahnoune</a>
+    <nav>
+      <a href="#about" class="active">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#travel">Travel</a>
+      <a href="#connect">Connect</a>
+    </nav>
+<button class="hamburger" id="hamburger" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
+  </header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#travel">Travel</a>
+  <a href="#connect">Connect</a>
+</div>
+
+
+
+  
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="hero-text">
+      <p class="eyebrow">Strategy · Business · Vision</p>
+      <h1>Noha<br><em>Sahnoune</em></h1>
+      <p class="bio">
+         Strategist at the intersection of the quantitative and creative. Designing a life as intentional as the career behind it.
+        <br>
+        <br>
+         <em>Currently:</em> Chief of Staff/Senior Strategic PM, Thomson Reuters 
+        <br>
+         Prior: Xbox (Microsoft), Nestle USA, ExxonMobil, NASA
+        <br>
+        <br>
+         MBA, Strategy, Marketing - The University of Chicago
+        <br>
+         MS, BBA, Accounting - The University of Houston
+      </p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="photo-frame">
+        <div class="corner-deco tl"></div>
+        <div class="corner-deco br"></div>
+      </div>
+      <p class="photo-caption">nohasahnoune.com</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <p class="section-label">Selected Work</p>
+    <h2 class="section-title">Key Projects &<br><em>Interests</em></h2>
+    <hr class="rule" />
+    <div class="projects-grid">
+      <div class="project-card">
+        <p class="project-number">01 —</p>
+        <h3 class="project-title">Strategic Architecture</h3>
+        <p class="project-desc">Design and operationalize strategy - driving executive alignment, decision velocity, and communications in high-complexity environments. Build planning rhythms and cross-functional systems that translate vision to execution.</p>
+        <span class="project-tag">Leadership</span>
+        <span class="project-tag">Strategy</span>  
+      </div>
+      <div class="project-card">
+        <p class="project-number">02 —</p>
+        <h3 class="project-title">Market Expansion</h3>
+        <p class="project-desc">End-to-end framework and analysis for PC market expansion opportunities, including TAM sizing, competitive landscape review, audience behavior and preference analysis, and go-to-market planning for Xbox Game Pass (Microsoft Gaming).</p>
+        <span class="project-tag">Strategy</span>
+        <span class="project-tag">Growth</span>
+      </div>
+      <div class="project-card">
+        <p class="project-number">03 —</p>
+        <h3 class="project-title">Portfolio Management</h3>
+        <p class="project-desc">P&L strategy across foods portfolio, driving disciplined growth across Nestle's iconic global brands (including Nido, Abuelita Hot Chocolate, and MILO) through data-driven decisions and cross-functional leadership with marketing and sales.</p>
+        <span class="project-tag">P&L Management</span>
+        <span class="project-tag">Growth</span>
+      </div>
+      <div class="project-card">
+        <p class="project-number">04 —</p>
+        <h3 class="project-title">The Style Strategy</h3>
+        <p class="project-desc">Essays and thoughts exploring the crossroads of style and strategy in the modern workplace - refining presence, positioning, and long-term vision.</p>
+        <span class="project-tag">Writing</span>
+        <span class="project-tag">Personal Growth</span>
+      </div>
+      <div class="project-card">
+        <p class="project-number">05 —</p>
+        <h3 class="project-title">Travel & Photography</h3>
+        <p class="project-desc">Documenting cities, architecture, and culture through a strategic (Nikon) lens - capturing light and detail that shape how we live and move throughout the world.</p>
+        <span class="project-tag">Writing</span>
+        <span class="project-tag">Photography</span>
+      </div>
+      <div class="project-card">
+        <p class="project-number">06 —</p>
+        <h3 class="project-title">Pilates Instruction</h3>
+        <p class="project-desc">Certified Pilates instructor focused on form and strength - developing discipline and confidence in 350+ clients (and growing!), inside and beyond the studio.</p>
+        <span class="project-tag">Leadership</span>
+        <span class="project-tag">Fitness</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <p class="section-label">Capabilities</p>
+    <h2 class="section-title">Skills &<br><em>Expertise</em></h2>
+    <hr class="rule" />
+    <div class="skills-layout">
+      <div class="skills-intro">
+        <p>A career spanning finance, marketing, and strategy across industries, with a consistent throughline: disciplined thinking, structured execution, and a creative lens on complex problems. I build systems that turn ideas and ambition into execution.</p>
+      </div>
+      <div class="skills-clusters">
+
+       <div>
+          <p class="cluster-title">Sectors</p>
+          <div class="skill-pills">
+            <span class="pill featured">Tech (SaaS and Consumer)</span>
+            <span class="pill featured">Food & Beverage</span>
+            <span class="pill featured">Energy</span>
+            <span class="pill featured">Aerospace</span>
+          </div>
+        </div>
+              
+        <div>
+          <p class="cluster-title">Strategy &amp; Marketing</p>
+          <div class="skill-pills">
+            <span class="pill">Strategic Planning</span>
+             <span class="pill">Product Marketing</span>
+            <span class="pill">Market Research</span>
+            <span class="pill">Growth Strategy</span>
+            <span class="pill">Consumer Marketing</span>
+            <span class="pill">Scenario Planning</span>
+             <span class="pill">Storytelling</span>
+          </div>
+        </div>
+
+ <div>
+          <p class="cluster-title">Finance &amp; Analysis</p>
+          <div class="skill-pills">
+            <span class="pill">Financial Modeling</span>
+            <span class="pill">Pricing Strategy</span>
+             <span class="pill">Business Planning</span>
+             <span class="pill">P&L Management</span>
+          </div>
+        </div>
+
+        
+        <div>
+          <p class="cluster-title">Execution &amp; Leadership</p>
+          <div class="skill-pills">
+            <span class="pill">Cross-Functional Leadership</span>
+            <span class="pill">Stakeholder Management</span>
+            <span class="pill">Project Management</span>
+            <span class="pill">Executive Communication</span>
+            <span class="pill">Relationship Building</span>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAVEL -->
+  <section id="travel">
+    <p class="section-label">Around the World</p>
+    <h2 class="section-title">Places &<br><em>Adventure</em></h2>
+    <hr class="rule" />
+    <div class="travel-grid">
+
+      <!-- Row 1 -->
+      <div class="postcard">
+        <img class="postcard-img" src="paris.jpg" alt="Paris" />
+        <div class="postcard-overlay">
+          <p class="postcard-region">Europe</p>
+          <h3 class="postcard-city">Paris, France</h3>
+        </div>
+      </div>
+      <div class="postcard">
+      <img class="postcard-img" src="barcelona.JPG" alt="Barcelona" />
+        <div class="postcard-overlay">
+          <p class="postcard-region">Europe</p>
+          <h3 class="postcard-city">Barcelona, Spain</h3>
+        </div>
+      </div>
+      <div class="postcard">
+         <img class="postcard-img" src="kyoto.jpg" alt="Kyoto" />
+        <div class="postcard-overlay">
+          <p class="postcard-region">Asia</p>
+          <h3 class="postcard-city">Kyoto, Japan</h3>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="postcard">
+     <img class="postcard-img" src="amsterdam.JPG" alt="Amsterdam" />
+        <div class="postcard-overlay">
+          <p class="postcard-region">Europe</p>
+          <h3 class="postcard-city">Amsterdam, the Netherlands</h3>
+        </div>
+      </div>
+      <div class="postcard">
+       <img class="postcard-img" src="newyork.JPG" alt="New York" />
+        <div class="postcard-overlay">
+          <p class="postcard-region">Americas</p>
+          <h3 class="postcard-city">New York, New York, USA</h3>
+        </div>
+      </div>
+      <div class="postcard">
+       <img class="postcard-img" src="budapest.jpg" alt="Budapest" />
+        <div class="postcard-overlay">
+          <p class="postcard-region">Europe</p>
+          <h3 class="postcard-city">Budapest, Hungary</h3>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="postcard">
+       <img class="postcard-img" src="madrid.JPG" alt="Madrid" />
+        <div class="postcard-overlay">
+          <p class="postcard-region">Europe</p>
+          <h3 class="postcard-city">Madrid, Spain</h3>
+        </div>
+      </div>
+      <div class="postcard">
+        <img class="postcard-img" src="zurich.jpg" alt="Zurich" />
+        <div class="postcard-overlay">
+          <p class="postcard-region">Europe</p>
+          <h3 class="postcard-city">Zurich, Switzerland</h3>
+        </div>
+      </div>
+      <div class="postcard">
+         <img class="postcard-img" src="munich.jpg" alt="Munich" />
+        <div class="postcard-overlay">
+          <p class="postcard-region">Europe</p>
+          <h3 class="postcard-city">Munich, Germany</h3>
+        </div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="postcard">
+     <img class="postcard-img" src="prague.JPG" alt="Prague" />
+        <div class="postcard-overlay">
+          <p class="postcard-region">Europe</p>
+          <h3 class="postcard-city">Prague, Czechia</h3>
+        </div>
+      </div>
+      <div class="postcard">
+         <img class="postcard-img" src="tokyo.JPG" alt="Tokyo" />
+        <div class="postcard-overlay">
+          <p class="postcard-region">Asia</p>
+          <h3 class="postcard-city">Tokyo, Japan</h3>
+        </div>
+      </div>
+      <div class="postcard">
+     <img class="postcard-img" src="chicago.JPG" alt="Chicago" />
+        <div class="postcard-overlay">
+          <p class="postcard-region">Americas</p>
+          <h3 class="postcard-city">Chicago, Illinois, USA</h3>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section id="connect">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Let's<br><em>Connect</em></h2>
+    <hr class="rule" />
+    <div class="connect-layout">
+      <div>
+        <p class="connect-copy">
+        </p>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:hello@nohasahnoune.com">
+            <span class="cl-label">Email</span>
+            <span class="cl-value">hello@nohasahnoune.com</span>
+          </a>
+          <a class="contact-link" href="https://linkedin.com/in/nohasahnoune" target="_blank">
+            <span class="cl-label">LinkedIn</span>
+            <span class="cl-value">linkedin.com/in/nohasahnoune</span>
+          </a>
+        </div>
+      </div>
+      <div>
+   <form id="contact-form">
+  <div class="form-field">
+    <label>Your Name</label>
+    <input type="text" name="name" placeholder="Jane Smith" />
+  </div>
+  <div class="form-field">
+    <label>Email</label>
+    <input type="email" name="email" placeholder="jane@company.com" />
+  </div>
+  <div class="form-field">
+    <label>Message</label>
+    <textarea name="message" rows="5" placeholder="What's on your mind?"></textarea>
+  </div>
+  <button class="btn" type="submit">Send Message</button>
+  <p id="form-status" style="margin-top:1rem; font-size:0.82rem; color:var(--accent); display:none;">
+    Message sent — I'll be in touch soon.
+  </p>
+</form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Noha Sahnoune — nohasahnoune.com</span>
+    <span>© 2025 · All rights reserved</span>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const navLinks  = document.querySelectorAll('nav a');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+
+    sections.forEach(s => observer.observe(s));
+
+    window.addEventListener('scroll', () => {
+      let current = 'about';
+      ['about','projects','skills','travel','connect'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && window.scrollY >= el.offsetTop - 200) current = id;
+      });
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    });
+
+    navLinks.forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLinks = mobileMenu.querySelectorAll('a');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+
+mobileLinks.forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.querySelector(a.getAttribute('href'))
+      ?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+const form = document.getElementById('contact-form');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
+  const response = await fetch('https://formspree.io/f/xwvnjjve', {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+  if (response.ok) {
+    form.reset();
+    document.getElementById('form-status').style.display = 'block';
+  }
+});
+    
+  </script>
+</body>
+</html>
