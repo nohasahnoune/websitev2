@@ -137,13 +137,14 @@
       margin-bottom: 3rem;
     }
     /* ── ABOUT / HERO ── */
-    #about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-      padding-top: 10rem;
-    }
+   #about {
+  display: grid;
+  grid-template-columns: 1fr;   /* was: 1fr 1fr */
+  gap: 6rem;
+  align-items: center;
+  padding-top: 10rem;
+  max-width: 720px;             /* keeps the text column from stretching too wide */
+}
     .hero-text .eyebrow {
       font-family: var(--mono);
       font-size: 0.7rem;
