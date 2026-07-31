@@ -137,14 +137,11 @@
       margin-bottom: 3rem;
     }
     /* ── ABOUT / HERO ── */
-   #about {
-  display: grid;
-  grid-template-columns: 1fr;   /* was: 1fr 1fr */
-  gap: 6rem;
-  align-items: center;
-  padding-top: 10rem;
-  max-width: 720px;             /* keeps the text column from stretching too wide */
-}
+    #about {
+      display: block;
+      padding-top: 10rem;
+      max-width: 760px;
+    }
     .hero-text .eyebrow {
       font-family: var(--mono);
       font-size: 0.7rem;
@@ -174,7 +171,7 @@
       margin-bottom: 2.5rem;
     }
     .hero-text .bio em { font-style: italic; color: var(--text); font-family: var(--serif); font-size: 1.05rem; }
-    /* Photo frame */
+    /* Photo frame (kept for when you add a photo later) */
     .hero-image { position: relative; }
     .photo-frame {
       width: 100%;
@@ -435,8 +432,7 @@
       .hamburger { display: flex; }
       header { padding: 1.2rem 2rem; }
       section { padding: 3rem 2rem 2rem; }
-      #about { grid-template-columns: 1fr; gap: 3rem; padding-top: 8rem; }
-      .hero-image { display: none; }
+      #about { padding-top: 8rem; }
       .travel-grid { grid-template-columns: 1fr; }
       .connect-layout { grid-template-columns: 1fr; gap: 3rem; }
       footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
@@ -477,13 +473,6 @@
         <br>
         MS, BBA, Accounting — The University of Houston
       </p>
-    </div>
-    <div class="hero-image">
-      <div class="photo-frame">
-        <div class="corner-deco tl"></div>
-        <div class="corner-deco br"></div>
-      </div>
-      <p class="photo-caption">nohasahnoune.com</p>
     </div>
   </section>
 
