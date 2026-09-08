@@ -74,7 +74,6 @@
 }
 </script>
 
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noha Sahnoune</title>
@@ -212,15 +211,16 @@
     }
    /* ── ABOUT / HERO ── */
     #about {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 4rem;
+      display: flex;
       align-items: center;
+      gap: 4rem;
       padding-top: 10rem;
     }
+    .hero-text { max-width: 560px; }
     .profile-photo {
-      width: 260px;
-      height: 260px;
+      flex: 0 0 auto;
+      width: 300px;
+      height: 300px;
       border-radius: 50%;
       object-fit: cover;
       border: 1px solid var(--rule);
@@ -305,8 +305,8 @@
     .stat { border-left: 1px solid var(--rule); padding-left: 1rem; }
     .stat-number { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--text); line-height: 1; }
     .stat-label { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.2rem; }
-  
-    
+
+
     /* ── TRAVEL ── */
     #travel { padding-top: 6rem; }
     .travel-grid {
@@ -523,7 +523,8 @@
       .hamburger { display: flex; }
       header { padding: 1.2rem 2rem; }
       section { padding: 3rem 2rem 2rem; }
-      #about { padding-top: 8rem; }
+      #about { flex-direction: column; align-items: flex-start; gap: 2.5rem; padding-top: 8rem; }
+      .hero-text { max-width: 100%; }
       .travel-grid { grid-template-columns: 1fr; }
       .connect-layout { grid-template-columns: 1fr; gap: 3rem; }
       footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
@@ -547,7 +548,6 @@
     <a href="#travel">Travel</a>
     <a href="#connect">Connect</a>
   </div>
-
   <!-- ABOUT -->
   <section id="about">
     <div class="hero-text">
@@ -569,7 +569,6 @@
       <img class="profile-photo" src="noha.jpg" alt="Noha Sahnoune" />
     </div>
   </section>
-
   <!-- TRAVEL -->
   <section id="travel">
     <p class="section-label">Around the World</p>
@@ -666,7 +665,6 @@
       </div>
     </div>
   </section>
-
   <!-- CONNECT -->
   <section id="connect">
     <p class="section-label">Get In Touch</p>
@@ -707,12 +705,10 @@
       </div>
     </div>
   </section>
-
   <footer>
     <span class="sig">Noha Sahnoune — nohasahnoune.com</span>
     <span>© 2026 · All rights reserved</span>
   </footer>
-
   <script>
     const sections = document.querySelectorAll('section');
     const navLinks  = document.querySelectorAll('nav a');
