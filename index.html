@@ -210,10 +210,26 @@
       border-top: 1px solid var(--rule);
       margin-bottom: 3rem;
     }
-    /* ── ABOUT / HERO ── */
+   /* ── ABOUT / HERO ── */
     #about {
-      display: block;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4rem;
+      align-items: center;
       padding-top: 10rem;
+    }
+    .profile-photo {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--rule);
+      filter: grayscale(100%) contrast(1.02) brightness(0.92);
+      transition: filter 0.5s ease, transform 0.5s ease;
+    }
+    .profile-photo:hover {
+      filter: grayscale(0%) contrast(1) brightness(1);
+      transform: scale(1.03);
     }
     .hero-text .eyebrow {
       font-family: var(--mono);
@@ -289,6 +305,8 @@
     .stat { border-left: 1px solid var(--rule); padding-left: 1rem; }
     .stat-number { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--text); line-height: 1; }
     .stat-label { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.2rem; }
+  
+    
     /* ── TRAVEL ── */
     #travel { padding-top: 6rem; }
     .travel-grid {
@@ -546,6 +564,9 @@
         <br>
         MS, BBA, Accounting — The University of Houston
       </p>
+    </div>
+    <div class="hero-image">
+      <img class="profile-photo" src="noha.jpg" alt="Noha Sahnoune" />
     </div>
   </section>
 
